@@ -1,0 +1,12 @@
+[Unit]
+Description=co2monitor
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/co2monitor /dev/hidraw0 :9119
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+
